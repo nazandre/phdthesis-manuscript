@@ -1,0 +1,11 @@
+\documentclass{standalone}
+\usepackage{graphics}
+\usepackage{tikz}
+
+\usetikzlibrary{arrows,automata,positioning}
+
+%\tikzset{->={Latex[width=10mm,length=3mm]}}
+
+\begin{document}
+<>
+\end{document}

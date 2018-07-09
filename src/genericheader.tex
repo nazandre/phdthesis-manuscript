@@ -1,0 +1,218 @@
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{gensymb}
+
+\usepackage{ucs}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{graphicx}
+
+\usepackage{enumitem}
+% unsuccessful trial to automatize publication section.
+%\usepackage{bibunits}
+%\usepackage{natbib}
+
+% Quotations
+\usepackage{dirtytalk}
+\usepackage{epigraph}
+%\usepackage{quotchap} % => modify style => BIG BIG chapter number
+
+\usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
+
+\usepackage{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+
+%\usepackage[hyphenbreaks]{breakurl}
+%\usepackage[hyphens]{url}
+%\usepackage[draft]{hyperref}
+%\hypersetup{breaklinks=true}
+\usepackage{url}
+\urlstyle{same}
+%\usepackage{cite}
+
+\def\hyph{-\penalty0\hskip0pt\relax}
+%\hyphenation{timestamping}
+
+\hyphenation{time-scales}
+
+\usepackage[multiple]{footmisc}
+
+\usepackage{array}
+\usepackage{multirow}
+
+\usepackage{graphics}
+
+\usepackage{caption}
+\captionsetup{width=0.8\textwidth}
+
+\newcommand{\srcInput}[1]{\input{src/#1}}
+
+% For the author biographies
+%\usepackage{picins}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\makeatletter
+\newcommand{\removelatexerror}{\let\@latex@error\@gobble}
+\makeatother
+
+% Algorithms
+%% line numbering
+\makeatletter
+\let\oldnl\nl
+\newcommand{\nonl}{\renewcommand{\nl}{\let\nl\oldnl}}
+\makeatother
+%% font size
+
+% Equation font size
+\newcommand{\equationTextSize}{\normalsize}
+
+% Ball and Spheres format
+\newcommand{\LBall}[1]{\mathop{#1{\textnormal{-}Ball}}}
+\newcommand{\LSphere}[1]{\mathop{#1{\textnormal{-}Sphere}}}
+
+% Quotation
+\newcommand{\inquote}[1]{``#1''}
+
+% Theorem, lemma, ... space
+\let\proof\relax
+\let\endproof\relax
+%\usepackage{amsthm}
+\renewcommand{\qedsymbol}{}
+
+%\newcommand{\mytopsep}{3pt plus 0pt minus 0pt}
+%
+%\makeatletter
+%\def\thm@space@setup{\thm@preskip=3pt
+%	\thm@postskip=3pt}
+%\makeatother
+
+\newtheoremstyle{newstyle}      
+{} %Aboveskip 
+{} %Below skip
+{\mdseries} %Body font e.g.\mdseries,\bfseries,\scshape,\itshape
+{} %Indent
+{\bfseries} %Head font e.g.\bfseries,\scshape,\itshape
+{.} %Punctuation afer theorem header
+{ } %Space after theorem header
+{} %Heading
+
+\newtheoremstyle{newstyle2}% name of the style to be used
+{}% measure of space to leave above the theorem. E.g.: 3pt
+{}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+{}% measure of space to indent the head
+{\normalfont\bfseries}% name of head font
+{\textcolor{definitionheaderforeground}{:}}% punctuation between head and body
+{ }% space after theorem head
+{\textcolor{definitionheaderforeground}{\thmname{#1}\thmnumber{~#2}\thmnote{ #3}}\vspace{.25em}}% Manually specify head
+
+%\theoremstyle{newstyle}
+%\theoremstyle{upmdefinition}
+\theoremstyle{newstyle2}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{cor}{Corollary}[section]
+
+% Rule definition
+\newtheoremstyle{newstyle3}% name of the style to be used
+{}% measure of space to leave above the theorem. E.g.: 3pt
+{}% measure of space to leave below the theorem. E.g.: 3pt
+{\normalfont}% name of font to use in the body of the theorem
+{}% measure of space to indent the head
+{\normalfont\bfseries}% name of head font
+{\textcolor{definitionheaderforeground}{.}}% punctuation between head and body
+{ }% space after theorem head
+{\textcolor{definitionheaderforeground}{\thmname{#1}\thmnumber{~#2}: \thmnote{ #3}}\vspace{.25em}}% Manually specify head
+\theoremstyle{newstyle3}
+\newtheorem{myRule}{Rule}
+
+\makeatletter
+\newenvironment{pf}[1][\proofname]{\par
+	\pushQED{\qed}%
+	\normalfont \topsep2\p@\relax
+	\trivlist
+	\item[\hskip\labelsep\itshape
+	#1\@addpunct{.}]\ignorespaces
+}{%
+	\popQED\endtrivlist\@endpefalse
+}
+\makeatother
+
+% Bug package titlesec: http://tex.stackexchange.com/questions/299969/titlesec-loss-of-section-numbering-with-the-new-update-2016-03-15
+%\usepackage{etoolbox}
+
+%\makeatletter
+%\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+%\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+%\makeatother
+
+%http://tex.stackexchange.com/questions/23313/how-can-i-reduce-padding-after-figure
+%\setlength{\belowcaptionskip}{-2pt}
+
+\makeindex             % used for the subject index
+% please use the style svind.ist with
+% your makeindex program
+
+\DeclareMathOperator*{\argmin}{argmin}
+%\ReDeclareMathOperator*{\argmax}{arg\,max}
+\let\argmax\relax
+\DeclareMathOperator*{\argmax}{argmax}
+%\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+
+\newtoggle{IMAGES}
+%\togglefalse{IMAGES}
+\toggletrue{IMAGES}
+
+\newtoggle{THESISCHAPTER}
+\toggletrue{THESISCHAPTER}
+%\togglefalse{THESISCHAPTER}
+
+\newcommand{\ind}{\hspace{2em}}
+
+\newcommand{\gnuplotGraphWidth}{0.7\linewidth}
+
+\renewcommand{\eqref}[1]{(\ref{#1})}
+
+%%%%%%%%%%%%%%%% Unknown (taxonomy) %%%%%%%%%%%%%%%%%%
+\newcommand{\unknown}{UK}
+\newcommand{\notAborded}{NA}
+
+
+%%%% Footnote runs onto two pages
+\interfootnotelinepenalty=10000
+
+\newcommand{\TOCHECK}[1]{{\color{brown}TO CHECK: #1}}
+\newcommand{\LCHECK}[1]{{\color{orange}TO LANGUAGE CHECK: #1}}
+\newcommand{\TODO}[1]{{\color{purple}TODO: #1}}
+
+\newcommand{\GAURL}{\url{https://github.com/nazandre/GraphAnalyzer}}
+\newcommand{\VisibleSimUrl}{\url{https://github.com/nazandre/thesis}}
+
+%\newcommand{\VisibleSimUrl}{\url{https://github.com/julien-bourgeois/VisibleSim/} (private GitHub repository)}
+
+%\definecolor{darkGreen}{rgb}{0.20,0.43,0.09}  % vert fonce
+\definecolor{goodGreen}{RGB}{0,153,0}  % vert fonce
+\newcommand{\bad}[1]{{#1}} %\textcolor{red}
+\newcommand{\good}[1]{{#1}} %\textcolor{goodGreen}
+
+\newcommand{\changes}[1]{{\color{red}#1}}
+
+% For the dedictions (mimic pen hand writing)
+\usepackage{frcursive}
+\definecolor{bluepen}{rgb}{0.2,0.2,0.5}
+
+\newcommand{\dedication}[1]{
+	\textcolor{bluepen}{
+		\begin{cursive}
+			#1
+		\end{cursive}
+	}
+}

@@ -1,0 +1,20 @@
+\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=4.5cm,line width=0.025cm]
+%line width=0.025cm
+
+   \tikzstyle{every state}=[minimum size=1.75cm]
+  \node[initial,state] (init)      {INIT};
+  \node[state,accepting] (conv) [below of=init]  {GOAL};
+  \node[state]  (bloc) [right of=init] {BLOCKED};
+  \node[state]  (wait) [below of=bloc] {WAITING};
+  \node[state]  (mov) [right of=wait] {MOVING};
+
+%, line width=0.1cm
+ \path [->] (init) edge  node {$\neg stream$} (bloc)
+            edge [left] node {$converged$} (conv)
+			edge node {$stream$} (wait)
+		(bloc) edge node {$stream$} (wait)
+	     (wait) edge [below] node {$progression$} (mov)
+		(mov) edge [bend right,above] node  {$\neg converged$} (wait)
+		(mov) edge [bend left] node  {$converged$} (conv);
+		
+\end{tikzpicture}

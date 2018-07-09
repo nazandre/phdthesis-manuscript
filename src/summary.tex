@@ -1,0 +1,36 @@
+%%% back page parameters: ./upmext-spimufcphdthesis.cfg
+
+%%--------------------
+%% Set the English abstract
+
+\newcommand{\mySummary}[1]{Technological advances, especially in the miniaturization of robotic devices foreshadow the emergence of large-scale ensembles of small-size resource-constrained robots that distributively cooperate to achieve complex tasks (e.g., modular self-reconfigurable robots, swarm robotic systems, distributed microelectromechanical systems, etc.). These ensembles are formed by independent, intelligent and communicating units which act as a whole ensemble. These units cooperatively self-organize themselves to achieve common goals. These systems are thought to be more versatile and more robust than conventional robotic systems while having at the same time a lower cost.{#1}These ensembles form complex asynchronous distributed systems in which every unit is an embedded system with its own but limited capabilities. Coordination of such large-scale distributed embedded systems poses significant algorithmic issues and open new opportunities in distributed algorithms. In my thesis, I defend the idea that distributed algorithmic primitives suitable for the coordination of these ensembles should be both identified and designed.{#1}In this work, we focus on a specific class of modular robotic systems, namely large-scale distributed modular robotic ensembles composed of resource-constrained modules that are organized in a lattice structure and which can only communicate with neighboring modules. We identified and implemented three building blocks, namely centrality-based leader election, time synchronization and self-reconfiguration.{#1}We propose a collection of distributed algorithms to realize these primitives. We evaluate them using both hardware experiments and simulations on systems ranging from a dozen modules to more than ten thousand modules. We show that our algorithms scale well and are suitable for large-scale embedded distributed systems with scarce memory and computing resources.
+
+% In particular, centrality and time synchronization have been widely studied in the literature but rarely in ad-hoc networks composed of tens of thousands of resource-constrained devices. In this thesis, we address these problems from an efficiency and scalability perspective.
+
+%Nouveau domaine. certaines problématiques très clairement identifiées (reconf, hard-ware), mais d’autres non. En particulier rien ou presque de réseau. Il faut vraiment poser les bases algo (dist.) et réseau. classical problem, solved in may domains. not modular robotics. long history (state of the art)
+}
+
+\thesisabstract[english]{\mySummary{ }}
+
+%%--------------------
+%% Set the English keywords. They only appear if
+%% there is an English abstract
+\thesiskeywords[english]{Distributed algorithms, Modular robotics, Centrality-based leader election, Time synchronization, Self-reconfiguration.}
+
+%%--------------------
+%% Set the French
+%%--------------------
+
+\hyphenation{miniatu-risation}
+
+\newcommand{\monResume}[1]{Les récentes avancées technologiques, en particulier dans le domaine de la miniaturisation de dispositifs robotiques, laissent présager l'émergence de grands ensembles distribués de petits robots qui coopéreront en vue d'accomplir des tâches complexes (e.g., robotique modulaire, robots en essaims, microsystèmes électromécaniques distribués). Ces grands ensembles seront composés d'entités indépendantes, intelligentes et communicantes qui agiront comme un ensemble à part entière. Pour cela, elles s'auto-organiseront et collaboreront en vue d'accomplir des tâches complexes. Ces systèmes présenteront les avantages d'être plus polyvalents et plus robustes que les systèmes robotiques conventionnels tout en affichant un prix réduit.{#1}Ces ensembles formeront des systèmes distribués complexes dans lesquels chaque entité sera un système embarqué à part entière avec ses propres capacités et ressources toutefois limitées. Coordonner de tels systèmes pose des défis majeurs et ouvre de nouvelles opportunités dans l'algorithmique distribuée. Je défends la thèse qu'il faut d'ores et déjà identifier et implémenter des algorithmes distribués servant de primitives de base à la coordination de ces ensembles.{#1}Dans ce travail, nous nous focalisons sur une classe particulière de robots, à savoir les robots modulaires distribués formant de grands ensembles de modules fortement contraints en ressources (mémoire, calculs, etc.), placés dans une grille régulière et capables de communiquer entre voisins connexes uniquement. J'ai identifié et implémenté trois primitives servant à la coordination de ces systèmes, à savoir l'élection d'un nœud central au réseau, la synchronisation temporelle ainsi que l'auto-reconfiguration.{#1}Dans ce manuscrit, je propose un ensemble d'algorithmes distribués réalisant ces primitives. Les algorithmes développés dans le cadre de ce travail ont été évalués sur des modules matériels et par simulation avec des systèmes composés de quelques dizaines à plus d'une dizaine de milliers de modules. Ces expériences montrent que nos algorithmes passent à l'échelle et sont adaptés aux grands ensembles distribués de systèmes embarqués avec des ressources fortement limitées à la fois en mémoire et en calcul.}
+
+\newcommand{\mesMotsCles}{algorithmique distribu{\'e}e, robots modulaires, {\'e}lection de leader bas{\'e}e sur la centralit{\'e}, synchronisation temporelle, auto-reconfiguration.}
+
+%%--------------------
+%% Set the French abstract
+\thesisabstract[french]{\monResume{ }}
+%%--------------------
+%% Set the French keywords. They only appear if
+%% there is an French abstract
+\thesiskeywords[french]{\mesMotsCles}

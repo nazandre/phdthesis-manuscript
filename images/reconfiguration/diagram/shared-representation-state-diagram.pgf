@@ -1,0 +1,41 @@
+
+\newcommand{\myTextWidth}{1.5cm}
+
+\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=4.5cm,line width=0.025cm]
+%line width=0.025cm
+
+   \tikzstyle{every state}=[minimum size=2cm]
+  \node[initial,state] (init)      {$Init$};
+  \node[state,accepting] (seed) [right of=init]  {$Seed$};
+  \node[state]  (wait) [below of=init, text width = \myTextWidth, style={align=center}] {Waiting before seed};
+  \node[state]  (bloc) [left of=wait] {$Blocked$};
+  \node[state]  (mov) [right of=wait,text width = \myTextWidth, style={align=center}] {Moving before seed};
+  \node[state]  (wait2) [below of=bloc, text width = \myTextWidth, style={align=center}] {Waiting to pass seed};
+  \node[state]  (mov2) [right of=wait2,text width = \myTextWidth, style={align=center}] {Moving to pass seed};
+  \node[state]  (wait3) [below of=mov2, text width = \myTextWidth, style={align=center}] {Waiting after seed};
+  \node[state]  (mov3) [right of=wait3,text width = \myTextWidth, style={align=center}] {Moving after seed};
+	\node[state,accepting]  (conv) [right of=mov2] {Goal};
+  \node[state]  (unknown) [right of = conv] {Unknown};
+%, line width=0.1cm
+ \path [->] (init) edge  [left] node {$\neg stream$} (bloc)
+    		edge node {$converged$} (seed)
+		edge node {$stream$} (wait)
+		(bloc) edge node {$stream$} (wait)
+	    (wait) edge [below] node {$progression$} (mov)
+		(mov) edge [bend right,above] node  {} (wait)
+		(wait) edge [] node  {Msg} (wait2)
+		(wait2) edge [] node  {progression} (mov2)
+		(mov2) edge [] node  {} (wait3)
+		(wait3) edge [] node  {progression} (mov3)
+		(mov3) edge [bend left] node  {$\neg$ converged} (wait3)
+		(mov2) edge [] node  {converged} (conv)
+		(mov3) edge [] node  {converged} (conv)
+		(mov3) edge [align=center,right,pos=0.35] node  {converged?\\data not\\locally available} (unknown)
+		(unknown) edge [] node  {converged} (conv)
+		(mov2) edge [align=center,bend left, above] node  {converged?\\data not\\locally available} (unknown)
+		%(unknwon) edge [align=center,bend left, above] node  {resume\\C2SR} ++ (-2,0);
+	    ;
+
+		%\draw[<-] (unknown) --++(0,2) node[above, align=center]{resume\\C2SR};
+
+\end{tikzpicture}

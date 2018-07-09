@@ -1,0 +1,96 @@
+%http://en.wikibooks.org/wiki/LaTeX/Glossary
+%https://fr.sharelatex.com/learn/Glossaries
+%http://www.latex-community.org/know-how/263-glossaries-nomenclature-lists-of-symbols-and-acronyms
+
+%%%%% Acronyms %%%%%
+%%% Glossary
+
+%%% Disable hyper link
+\glsdisablehyper
+
+\newcommand{\acrshortPl}[1]{\acrshort{#1}s}
+\newcommand{\acrfullPl}[1]{\acrlong{#1}s (\acrshortPl{#1})}
+
+\newacronym{pm}{PM}{Programmable Matter}
+\newacronym{msr}{MSR}{Modular Self-Reconfigurable Robot}
+\newacronym{dimems}{diMEMS}{distributed MicroElectroMechanical Systems}
+\newacronym{lmr}{LMR}{Distributed modular robotic ensemble composed of resource-constrained identical modules that are organized in a lattice structure and communicate together using only neighbor-to-neighbor communications.}
+\newacronym{lmrs}{LMRs}{}
+\newacronym{c2sr}{C2SR}{Cylindrical-Catoms Self-Reconfiguration (algorithm)}
+\newacronym{pc2le}{PC2LE}{Probabilistic-Counter-based Central-Leader Election (algorithm)}
+\newacronym{mrtp}{MRTP}{Modular Robot Time Synchronization Protocol}
+
+\newacronym{cw}{CW}{Clockwise}
+\newacronym{ccw}{CCW}{Counter-Clockwise}
+\newacronym{rtt}{RTT}{Round-Trip Time}
+\newacronym{rtc}{RTC}{Real-Time Counter}
+\newacronym{uart}{UART}{Universal Asynchronous Receivers/Transmitters}
+\newacronym{wsn}{WSN}{Wireless Sensor Network}
+\newacronym{iot}{IoT}{Internet of Things}
+\newacronym{iort}{IoRT}{Internet of Robotic Things}
+
+\newacronym{apsp}{APSP}{All-Pair Shortest Paths}
+\newacronym{sssp}{SSSP}{Single-Source Shortest Paths}
+
+\newacronym{bfs}{BFS}{Breadth-First Search}
+\newacronym{bfses}{BFSes}{Breadth-First Searches}
+\newacronym{bfst}{BFST}{Breadth-First Spanning Tree}
+
+%\newacronym{ntp}{NTP}{Network Time Protocol~\cite{mills1991internet}}
+%\newacronym{ptp}{PTP}{IEEE 1588 Precise Time Protocol~\cite{ptp2008}}
+%\newacronym{rbs}{RBS}{Reference Broadcast Synchronization~\cite{elson2002fine}}
+%\newacronym{tpsn}{TPSN}{Timing-sync Protocol for Sensor Networks (protocol)~\cite{ganeriwal2003timing}}
+%\newacronym{ftsp}{Flooding Time Synchronization Protocol~\cite{maroti2004flooding}}
+%\newacronym{tdp}{TDP}{Time-Diffusion Synchronization Protocol~\cite{su2005time}}
+%\newacronym{rats}{RATS}{the Rapid Time Synchronization (protocol)~\cite{kusy2007spatiotemporal}}
+%\newacronym{ad}{AD}{Asynchronous Diffusion (algorithm)~\cite{li2006global}}
+%\newacronym{gtsp}{GTSP}{Gradient Time Synchronization Protocol~\cite{sommer2009gradient}}
+%\newacronym{mts}{MTS}{Maximum Time Synchronization (protocol)~\cite{he2014time}}
+%\newacronym{ats}{ATS}{Average TimeSynch~\cite{schenato2011average}}
+
+%\newacronym{lmr}{LMR}{Lattice-Based Modular Robot with Neighbor-to-Neighbor Communications}
+
+\newcommand{\glossaryLine}[1]{\item[\acrshort{#1}] \acrlong{#1}}
+\newcommand{\myPrintGlossary}{
+	\clearpage
+	\chapter*{List of Abbreviations}
+	{
+		\addcontentsline{toc}{chapter}{List of Abbreviations}
+		\renewcommand{\labelitemi}{}
+		%\setitemize{itemsep=}
+		%\setlength\itemsep{1em}
+		\begin{description}
+			\setlength{\itemsep}{1.1\baselineskip}
+			%\item[\acrshort{mems}] \acrlong{mems}
+			\glossaryLine{apsp}
+			\glossaryLine{bfs}
+			\glossaryLine{bfst}			
+			\glossaryLine{c2sr}
+			\glossaryLine{mrtp}
+			\glossaryLine{cw}
+			\glossaryLine{ccw}
+			\glossaryLine{iot}
+			\glossaryLine{iort}
+			\glossaryLine{msr}
+			\glossaryLine{lmr}
+			\glossaryLine{pc2le}
+			\glossaryLine{pm}
+			\glossaryLine{rtc}
+			%\glossaryLine{rtt}
+			\glossaryLine{sssp}
+			\glossaryLine{uart}
+			\glossaryLine{wsn}
+		\end{description}
+	}
+}
+
+
+%%%%% Glossary %%%%%
+%\newglossaryentry{internet-of-things}
+%{
+%        name=IoT,
+%        description={\textquote{a global infrastructure for the information society, enabling advanced services by interconnecting (physical and virtual) things based on existing and evolving interoperable information and communication technologies} \cite {itu-y2060-2012}},
+%        first={Internet of Things (IoT)}
+%}
+
+
